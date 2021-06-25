@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Col, Row, Spinner } from 'react-bootstrap'
 import CoinCard from '../components/CoinCard'
 import SortCoins from '../components/SortCoins'
@@ -12,9 +12,9 @@ const HomeScreen = () => {
 
   const [sortType, setSortType] = useState()
 
-  const isPinned = (id) => {
+  const isPinned = useCallback((id) => {
     return pinnedCoins.findIndex(pinnedId => pinnedId === id) !== -1
-  }
+  }, [pinnedCoins])
 
   useEffect(() => {
     // calculate sorted coins and store them
