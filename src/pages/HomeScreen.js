@@ -40,7 +40,7 @@ const HomeScreen = () => {
     })
 
     setSortedCoins(sorted)
-  }, [coins, pinnedCoins, sortType])
+  }, [coins, pinnedCoins, sortType, isPinned])
 
   const sortByCoinName = () => {
     setSortType('name')

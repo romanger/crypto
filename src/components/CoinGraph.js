@@ -39,13 +39,13 @@ const CoinGraph = ({ coin }) => {
       setLoading(false)
     }
     getGraph()
-  }, [days])
+  }, [days, coin])
 
   return (
     <div className="bg-dark h-100 p-3 graph">
       <div className="graph__head d-flex justify-content-between align-items-start">
         <h2>Coin Rate for last {days} days</h2>
-        {days == 5 ?
+        {days === 5 ?
           <Button className="link d-none d-lg-inline-block" onClick={() => {setDaysNumber(30)}}>Last 30 days</Button> :
           <Button className="link d-none d-lg-inline-block" onClick={() => {setDaysNumber(5)}}>Last 5 days</Button>}
       </div>
