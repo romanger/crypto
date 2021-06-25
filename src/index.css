@@ -1,0 +1,43 @@
+main {
+  min-height: 80vh;
+}
+
+.coin-card button {
+  position: absolute;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.graph {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.graph__col {
+  position: relative;
+  cursor: pointer;
+}
+
+.graph__col:hover span{
+  color: #ffffff;
+}
+
+.graph__price--30 {
+  position: absolute;
+  width: 100px;
+  left: 0;
+  top: 0;
+  transform: translate(-38% ,-300%) rotate(90deg);
+  text-align: right;
+}
+
+.graph__price--5 {
+  display: block;
+  text-align: center;
+  padding-bottom: 5px;
+  transform: translateY(-100%);
+}
