@@ -15,7 +15,7 @@ const CoinCard = ({coin, pinCoinToTop, unPinCoin, pinned}) => {
       </Link>
       <Card.Body className='text-center'>
         <Card.Title className='text-primary d-flex align-items-center justify-content-center'>
-          {formatPrice(coinRawData.PRICE)}
+          {formatPrice(coinRawData.PRICE) + coinRawData.CURRENCY}
           { coinRawData.CHANGE24HOUR > 0 ? <i className="fas fa-sort-up text-success mx-2"></i> : <i className="fas fa-sort-down text-danger mx-2"></i>}
         </Card.Title>
         <Card.Text>
