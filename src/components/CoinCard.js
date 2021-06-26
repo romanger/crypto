@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
-import { formatCoinsData, formatPrice, getPrice, useInterval } from '../utils/CoinUtils'
+import { formatCoinsData, formatPrice} from '../utils/CoinUtils'
 
 const CoinCard = ({coin, pinCoinToTop, unPinCoin, pinned}) => {
 
   const {CoinInfo, RAW} = coin
   const coinRawData = formatCoinsData(RAW)[0]
-  const currency = coinRawData.CURRENCY
 
   return (
     <Card className='coin-card'>
