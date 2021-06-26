@@ -41,3 +41,10 @@ main {
   padding-bottom: 5px;
   transform: translateY(-100%);
 }
+
+.up {
+  color: green;
+}
+.down {
+  color: red;
+}

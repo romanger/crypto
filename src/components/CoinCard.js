@@ -1,12 +1,13 @@
-import React  from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
-import { formatCoinsData } from '../utils/CoinUtils'
+import { formatCoinsData, formatPrice, getPrice, useInterval } from '../utils/CoinUtils'
 
 const CoinCard = ({coin, pinCoinToTop, unPinCoin, pinned}) => {
 
   const {CoinInfo, RAW} = coin
   const coinRawData = formatCoinsData(RAW)[0]
+  const currency = coinRawData.CURRENCY
 
   return (
     <Card className='coin-card'>
@@ -15,7 +16,7 @@ const CoinCard = ({coin, pinCoinToTop, unPinCoin, pinned}) => {
       </Link>
       <Card.Body className='text-center'>
         <Card.Title className='text-primary d-flex align-items-center justify-content-center'>
-          {coinRawData.PRICE > 1 ? coinRawData.PRICE.toFixed(2) : coinRawData.PRICE.toPrecision(2)} {coinRawData.CURRENCY}
+          {formatPrice(coinRawData.PRICE)}
           { coinRawData.CHANGE24HOUR > 0 ? <i className="fas fa-sort-up text-success mx-2"></i> : <i className="fas fa-sort-down text-danger mx-2"></i>}
         </Card.Title>
         <Card.Text>

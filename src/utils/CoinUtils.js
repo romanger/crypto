@@ -22,6 +22,11 @@ export const getCoinHistory = async (coinName, limit) => {
   return data.Data.Data
 }
 
+export const getPrice = async (coin) => {
+  const {data} = await  axios.get(`https://min-api.cryptocompare.com/data/price?fsym=${coin}&tsyms=USD&api_key=${process.env.REACT_APP_API_KEY}`)
+  return data
+}
+
 export const formatCoinsData = (coin) => {
     const coinDataArray = []
 
@@ -34,6 +39,10 @@ export const formatCoinsData = (coin) => {
       coinDataArray.push(coin)
     }
     return coinDataArray;
+}
+
+export const formatPrice = (price) => {
+  return  price > 1 ? price.toFixed(2) : price.toPrecision(2)
 }
 
 export function useInterval(callback, delay) {

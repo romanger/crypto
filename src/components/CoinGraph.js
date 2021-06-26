@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getCoinHistory } from '../utils/CoinUtils'
+import { formatPrice, getCoinHistory } from '../utils/CoinUtils'
 import { Button } from 'react-bootstrap'
 
 const CoinGraph = ({ coin }) => {
@@ -53,7 +53,7 @@ const CoinGraph = ({ coin }) => {
         <div className="graph__body d-flex h-75 align-items-end">
           {graph.map((col, index) => (
             <div key={index} className="bg-primary mx-1 px-1 graph__col" style={getColStyle(col)}>
-              <span className={getPriceClass()}>{history[index].close} $</span>
+              <span className={getPriceClass()}>{formatPrice(history[index].close)} $</span>
             </div>
           ))}
         </div>
